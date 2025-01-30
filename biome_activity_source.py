@@ -1616,7 +1616,10 @@ class BiomePresence():
                 pyautogui.press("e")
                 time.sleep(0.3)
                 
-            pyautogui.dragTo(merchant_dialogue_box[0], merchant_dialogue_box[1], 3.05, button='left')
+            pyautogui.moveTo(merchant_dialogue_box[0], merchant_dialogue_box[1])
+            pyautogui.mouseDown()
+            time.sleep(3)
+            pyautogui.mouseUp()
                 
             for _ in range(5):
                 if not self.detection_running: return
@@ -1703,7 +1706,10 @@ class BiomePresence():
                                 pyautogui.moveTo(*purchase_button)
                                 pyautogui.click()
                                 time.sleep(0.55)
-                                pyautogui.dragTo(merchant_dialogue_box[0], merchant_dialogue_box[1], 3, button='left')
+                                pyautogui.moveTo(merchant_dialogue_box[0], merchant_dialogue_box[1])
+                                pyautogui.mouseDown()
+                                time.sleep(3)
+                                pyautogui.mouseUp()
 
                                 purchased_items[item_name] = purchased_count + 1
                                 break
